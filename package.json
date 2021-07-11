@@ -1,0 +1,15 @@
+{
+  "name": "rsi-test",
+  "version": "0.1.0",
+  "description": "Microservices Technical Test for RSI",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "rsi-test"
+  },
+  "author": "Roman Hartel",
+  "license": "ISC"
+}
