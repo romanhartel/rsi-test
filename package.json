@@ -16,12 +16,19 @@
   "author": "Roman Hartel",
   "license": "ISC",
   "dependencies": {
-    "@types/express": "^4.17.13",
-    "@types/ioredis": "^4.26.5",
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "ioredis": "^4.27.6",
     "nodemon": "^2.0.12",
     "redis-json": "^6.0.1",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v19.3.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.1",
+    "@types/express": "^4.17.13",
+    "@types/ioredis": "^4.26.5",
+    "@types/uuid": "^8.3.1",
     "typescript": "^4.3.5"
   }
 }

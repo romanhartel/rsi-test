@@ -13,12 +13,12 @@ export default class RedisRepo {
         });
     }
 
-    async get(key: string) {
-        return this.redis.get(key);
+    async get(key: string): Promise<string | null> {
+        return await this.redis.get(key);
     }
 
-    setReminder(key: string, value: string, expire: number) {
-        this.redis
+    async setReminder(key: string, value: string, expire: number): Promise<[Error | null, any][]> {
+        return await this.redis
             .multi()
             .set(key, value)
             .set(`reminder:${key}`, 1)
