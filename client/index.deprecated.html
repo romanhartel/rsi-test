@@ -2,8 +2,8 @@
     <head>
         <script>
             const data = JSON.stringify({
-                "name": "ccc",
-                "time": "1626051040"
+                'name': 'this is a test reminder',
+                'time': '1626051040'
             });
 
             console.log('start');
@@ -12,14 +12,14 @@
             const xhr = new XMLHttpRequest();
             xhr.withCredentials = true;
 
-            xhr.addEventListener("readystatechange", function () {
+            xhr.addEventListener('readystatechange', function () {
                 if (this.readyState === this.DONE) {
                     console.log(this.responseText);
                 }
             });
 
-            xhr.open("POST", "http://localhost:4242/");
-            xhr.setRequestHeader("content-type", "application/json");
+            xhr.open('POST', 'http://localhost:4242/');
+            xhr.setRequestHeader('content-type', 'application/json');
 
             xhr.send(data);
 

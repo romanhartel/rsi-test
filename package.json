@@ -16,10 +16,11 @@
   "author": "Roman Hartel",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
+    "dotenv": "^10.0.0",
     "ioredis": "^4.27.6",
+    "loglevel": "^1.7.1",
     "nodemon": "^2.0.12",
+    "pm2": "^5.1.0",
     "redis-json": "^6.0.1",
     "uWebSockets.js": "github:uNetworking/uWebSockets.js#v19.3.0",
     "uuid": "^8.3.2"

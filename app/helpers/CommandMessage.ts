@@ -1,11 +1,17 @@
+//****************************************************************
+
 /**
- * Command message to add an event reminder with a name and a specific time.
+ * Command message to handle an event reminder with a name and a specific time.
  */
+
+//****************************************************************
 
 import { v4 as uuid_v4 } from 'uuid';
 
-export default class CommandMessage {
+//****************************************************************
 
+export default class CommandMessage
+{
     public uuid: string;
     public name: string;
     public time: number;
@@ -18,11 +24,16 @@ export default class CommandMessage {
      *
      * @param jsonCommand Incoming message in JSON format like so {"name":"blabla","time":"1626097620"}. Gets parsed before being injected.
      */
-    public constructor(jsonCommand: any) {
+
+    public constructor(jsonCommand: string)
+    {
+        const command: any = JSON.parse(jsonCommand);
+
+        console.log(command);
 
         this.uuid = uuid_v4();
-        this.name = jsonCommand.name;
-        this.time = jsonCommand.time;
+        this.name = command.name;
+        this.time = command.time;
         this.expiration = -1;
     }
 
@@ -31,13 +42,13 @@ export default class CommandMessage {
      *
      * @returns boolean
      */
-    public isValid(): boolean {
 
+    public isValid(): boolean
+    {
         const now: number = Math.round(Date.now() / 1000);
 
         this.expiration = this.time - now;
 
         return this.expiration > 0 ? true : false;
     }
-
 }
